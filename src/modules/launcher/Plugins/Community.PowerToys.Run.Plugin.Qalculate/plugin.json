@@ -1,0 +1,13 @@
+﻿{
+  "ID": "e9ddbd21b1ae491aaf4c51b389c737ad",
+  "ActionKeyword": "",
+  "IsGlobal": false,
+  "Name": "Qalculate",
+  "Author": "Alvin Meng",
+  "Version": "0.0.1",
+  "Language": "csharp",
+  "Website": "https://github.com/Al2Me6",
+  "ExecuteFileName": "Community.PowerToys.Run.Plugin.Qalculate.dll",
+  "IcoPathDark": "Images\\calculator.dark.png",
+  "IcoPathLight": "Images\\calculator.light.png"
+}
