@@ -22,7 +22,10 @@ namespace Community.PowerToys.Run.Plugin.Qalculate
               |pow|sqrt|cbrt
               |exp|ln|log|log2|log10
               |(a|arc)?(sin|cos|tan|csc|sec|cot)h?
-              |integrate
+              |integrate|diff
+              |sum|product
+              |mean|median|mode|stdevp?
+              |dot|cross
               |bin|hex|oct
             )\(",
             RegexOptions.IgnorePatternWhitespace | RegexOptions.ExplicitCapture)]
@@ -71,10 +74,10 @@ namespace Community.PowerToys.Run.Plugin.Qalculate
         public static bool ShouldEvaluateGlobally(string query)
         {
             return (BasicExpressionChars().IsMatch(query) && query.Any(char.IsAsciiDigit))
+                || NamedConstants.Contains(query)
                 || FunctionNames().IsMatch(query)
                 || UnitConversion().IsMatch(query)
-                || BaseConversion().IsMatch(query)
-                || NamedConstants.Contains(query);
+                || BaseConversion().IsMatch(query);
         }
 
         public static string? Evaluate(string query)
